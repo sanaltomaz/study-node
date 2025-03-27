@@ -1,0 +1,30 @@
+[
+  {
+    "nome": "Maria",
+    "idade": 20
+  },
+  {
+    "nome": "José",
+    "idade": 30
+  },
+  {
+    "nome": "Ana",
+    "idade": 35
+  },
+  {
+    "nome": "Bruno",
+    "idade": 19
+  },
+  {
+    "nome": "Felipe",
+    "idade": 25
+  },
+  {
+    "nome": "João",
+    "idade": 22
+  },
+  {
+    "nome": "Patricia",
+    "idade": 32
+  }
+]
