@@ -1,0 +1,30 @@
+{
+  "name": "study-node",
+  "version": "1.0.0",
+  "description": "Bem-vindo ao meu repositório de estudos em Node.js! Aqui compartilho exercícios e projetos desenvolvidos para aprimorar minhas habilidades utilizando os módulos nativos do Node.js.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanaltomaz/study-node.git"
+  },
+  "keywords": [
+    "Node.js",
+    "JavaScript",
+    "fs",
+    "modulos-nativos",
+    "aprendizado"
+  ],
+  "author": "Sanaltomaz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sanaltomaz/study-node/issues"
+  },
+  "homepage": "https://github.com/sanaltomaz/study-node#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
