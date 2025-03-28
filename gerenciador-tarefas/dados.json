@@ -5,11 +5,11 @@
   },
   {
     "nome": "Fazer compras",
-    "status": "concluida"
+    "status": "concluído"
   },
   {
     "nome": "Ler um livro",
-    "status": "pendente"
+    "status": "concluído"
   },
   {
     "nome": "Aprender python",
@@ -26,5 +26,13 @@
   {
     "nome": "Desenvolver uma aplicação nova",
     "status": "em andamento"
+  },
+  {
+    "nome": "Fazer exercícios",
+    "status": "concluído"
+  },
+  {
+    "nome": "Praticar programação",
+    "status": "pendente"
   }
 ]

@@ -24,22 +24,22 @@ class GerenciadorTarefas {
                 throw new Error('Nome da tarefa deve ter no máximo 50 caracteres.');
             }
             // Envia a tarefa para o Map como uma nova Tarefa
-            this.tarefas.set(tarefa.nome, new Tarefa(tarefa.nome, tarefa.status));
+            this.tarefas.set(tarefa.nome, tarefa);
         }
     }
 
     adicionarTarefa(tarefa) {
-        try {    
-            if (!(tarefa instanceof Tarefa)) {
-                throw new Error('Tarefa inválida para ser adicionada.');
+        try {
+            if (!tarefa instanceof Tarefa) {
+                throw new Error('A tarefa precisa ser uma instancia da classe Tarefa.')
             }
-            if (!tarefa.nome || typeof tarefa.nome !== 'string' || tarefa.nome.trim().length === 0) {
+            if (!tarefa.nome|| typeof tarefa.nome !== 'string' || tarefa.nome.trim().length === 0) {
                 throw new Error('O nome da tarefa é obrigatório e deve ser uma string não vazia.');
             }
             if (!tarefa.status || typeof tarefa.status !== 'string') {
                 throw new Error('O status da tarefa é obrigatório e deve ser uma string.');
             }
-            if (this.tarefas.has(tarefa.nome)) {
+            if (this.tarefas.has(nome)) {
                 throw new Error(`Tarefa com o nome ${tarefa.nome} já existe.`);
             }
         } catch (error) {
@@ -47,7 +47,7 @@ class GerenciadorTarefas {
         }
         this.tarefas.set(tarefa.nome, tarefa);
         escreverDadosJSON(this.caminho, this.tarefas);
-    }
+    };
 
     listasTodasTarefas() {
         const todas = [...this.tarefas.values()]
@@ -64,7 +64,7 @@ class GerenciadorTarefas {
         return tarefasFiltradas;
     }
 
-    removeTarefa(nome) {
+    removerTarefa(nome) {
         if (!this.tarefas.has(nome)) {
             throw new Error(`Tarefa com o nome ${nome} não encontrada.`);
         }
@@ -83,7 +83,6 @@ class GerenciadorTarefas {
         escreverDadosJSON(this.caminho, this.tarefas); // Salva as alterações no arquivo JSON
         console.log(`Status da tarefa ${nome} alterado para ${novoStatus}.`); // Mensagem de sucesso
     }
-
 }
 
 export default GerenciadorTarefas;
