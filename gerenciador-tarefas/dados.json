@@ -1,7 +1,30 @@
 [
-  {},
-  {},
-  {},
-  {},
-  {}
+  {
+    "nome": "Estudar JavaScript",
+    "status": "pendente"
+  },
+  {
+    "nome": "Fazer compras",
+    "status": "concluida"
+  },
+  {
+    "nome": "Ler um livro",
+    "status": "pendente"
+  },
+  {
+    "nome": "Aprender python",
+    "status": "pendente"
+  },
+  {
+    "nome": "Aprender React.js",
+    "status": "concluído"
+  },
+  {
+    "nome": "Aprender JavaScript",
+    "status": "em andamento"
+  },
+  {
+    "nome": "Desenvolver uma aplicação nova",
+    "status": "em andamento"
+  }
 ]

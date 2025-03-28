@@ -1,4 +1,3 @@
-// filepath: /home/sanal/Workspace/projetosNode/study-node/gerenciador-tarefas/dados.js
 import fs from 'fs';
 
 export function lerDadosJSON(caminho) {
@@ -14,6 +13,7 @@ export function lerDadosJSON(caminho) {
 }
 
 export function escreverDadosJSON(caminho, dados) {
+    // Converte o Map para um array antes de salvar
     const json = JSON.stringify([...dados.values()], null, 2);
     fs.writeFileSync(caminho, json, 'utf-8');
 }
