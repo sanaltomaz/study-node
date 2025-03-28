@@ -6,9 +6,9 @@ const dados = "./dados.json";
 
 const gerenciadorTarefas = new GerenciadorTarefas(dados);
 
-gerenciadorTarefas.adicionarTarefa(new Tarefa("Desenvolver uma aplicação nova"));
+// gerenciadorTarefas.adicionarTarefa(new Tarefa("Desenvolver uma aplicação nova"));
 
-console.log(gerenciadorTarefas.listasTodasTarefas()); 
+console.log(gerenciadorTarefas.listarTarefasPorStatus("em andamento")); 
 
 // console.log(lerDadosJSON);
 // console.log(escreverDadosJSON);
