@@ -26,5 +26,6 @@
   "homepage": "https://github.com/sanaltomaz/study-node#readme",
   "devDependencies": {
     "nodemon": "^3.1.9"
-  }
+  },
+  "type": "module"
 }

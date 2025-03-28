@@ -1,29 +1,19 @@
+// filepath: /home/sanal/Workspace/projetosNode/study-node/gerenciador-tarefas/dados.js
 import fs from 'fs';
 
 export function lerDadosJSON(caminho) {
+    if (!fs.existsSync(caminho)) {
+        return []; // Retorna um array vazio se o arquivo não existir
+    }
+    const dados = fs.readFileSync(caminho, 'utf-8');
     try {
-        if (!fs.existsSync(caminho)) {
-            return [];
-        }
-        const dados = fs.readFileSync(caminho, 'utf-8');
-        return JSON.parse(dados); 
+        return JSON.parse(dados); // Certifique-se de que o JSON é válido
     } catch (error) {
-        console.log(`Erro ao ler o arquivo: ${error}`);
-        return [];
+        throw new Error('Erro ao analisar o arquivo JSON. Verifique o formato.');
     }
 }
 
 export function escreverDadosJSON(caminho, dados) {
-    try {
-        dados = JSON.stringify(dados, null, 2);
-        fs.writeFileSync(caminho, dados);
-        console.log('Dados salvos com sucesso!');
-    } catch (error) {
-        console.log(`Erro ao salvar os dados: ${error.message}`);
-    }
-}
-
-export default {
-    lerDadosJSON,
-    escreverDadosJSON
+    const json = JSON.stringify([...dados.values()], null, 2);
+    fs.writeFileSync(caminho, json, 'utf-8');
 }
