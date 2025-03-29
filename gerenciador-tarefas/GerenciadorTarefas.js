@@ -60,17 +60,18 @@ class GerenciadorTarefas {
         const tarefasFiltradas = [...this.tarefas.values() // Converte o Map em um array
             .filter(tarefa => tarefa.status === status) // Filtra as tarefas pelo status
             .map(tarefa => `Tarefa: ${tarefa.nome}, Status: ${tarefa.status}`)] // Mapeia as tarefas filtradas para uma string
+            .join('\n') // Junta as tarefas em uma string
             || "Nenhuma tarefa encontrada com esse status."; 
         return tarefasFiltradas;
     }
 
     removerTarefa(nome) {
+        // Verifica se a tarefa existe
         if (!this.tarefas.has(nome)) {
             throw new Error(`Tarefa com o nome ${nome} não encontrada.`);
         }
         this.tarefas.delete(nome); // Remove a tarefa do Map
         escreverDadosJSON(this.caminho, this.tarefas); // Salva as alterações no arquivo JSON
-        console.log(`Tarefa ${nome} removida com sucesso.`); // Mensagem de sucesso
     }
 
     alterarStatus(nome, novoStatus) {
@@ -83,6 +84,31 @@ class GerenciadorTarefas {
         escreverDadosJSON(this.caminho, this.tarefas); // Salva as alterações no arquivo JSON
         console.log(`Status da tarefa ${nome} alterado para ${novoStatus}.`); // Mensagem de sucesso
     }
+
+    alterarNome(nome, novoNome) {
+        // Verifica se a tarefa existe
+        if (!this.tarefas.has(nome)) {
+            throw new Error(`Tarefa com o nome ${nome} não encontrada para alterar o nome.`);
+        }
+        // Verifica se o novo nome é válido
+        if (this.tarefas.has(novoNome)) {
+            throw new Error(`Tarefa com o nome ${novoNome} já existe.`);
+        }
+        if (novoNome.length < 3) {
+            throw new Error('Nome da tarefa deve ter pelo menos 3 caracteres.');
+        }
+        if (novoNome.length > 50) {
+            throw new Error('Nome da tarefa deve ter no máximo 50 caracteres.');
+        }
+        const tarefa = this.tarefas.get(nome);
+        tarefa.nome = novoNome;
+        this.tarefas.delete(nome); // Remove a tarefa antiga do Map
+        this.tarefas.set(novoNome, tarefa); // Adiciona a tarefa com o novo nome
+        escreverDadosJSON(this.caminho, this.tarefas); // Salva as alterações no arquivo JSON
+        console.log(`Nome da tarefa alterado de ${nome} para ${novoNome}.`); // Mensagem de sucesso
+        
+    }
+
 }
 
 export default GerenciadorTarefas;

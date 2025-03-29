@@ -4,16 +4,8 @@
     "status": "pendente"
   },
   {
-    "nome": "Fazer compras",
-    "status": "concluído"
-  },
-  {
     "nome": "Ler um livro",
     "status": "concluído"
-  },
-  {
-    "nome": "Aprender python",
-    "status": "pendente"
   },
   {
     "nome": "Aprender React.js",
@@ -33,6 +25,10 @@
   },
   {
     "nome": "Praticar programação",
+    "status": "pendente"
+  },
+  {
+    "nome": "Aprender Java",
     "status": "pendente"
   }
 ]

@@ -16,5 +16,4 @@ export function escreverDadosJSON(caminho, dados) {
     // Converte o Map para um array antes de salvar
     const json = JSON.stringify([...dados.values()], null, 2);
     fs.writeFileSync(caminho, json, 'utf-8'); // Escreve os dados no arquivo JSON
-    console.log('Dados salvos com sucesso!'); // Mensagem de sucesso
 }
