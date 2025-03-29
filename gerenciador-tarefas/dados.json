@@ -4,10 +4,6 @@
     "status": "pendente"
   },
   {
-    "nome": "Ler um livro",
-    "status": "concluído"
-  },
-  {
     "nome": "Aprender React.js",
     "status": "concluído"
   },
@@ -20,15 +16,15 @@
     "status": "em andamento"
   },
   {
-    "nome": "Fazer exercícios",
-    "status": "concluído"
-  },
-  {
     "nome": "Praticar programação",
     "status": "pendente"
   },
   {
     "nome": "Aprender Java",
     "status": "pendente"
+  },
+  {
+    "nome": "Programar em node",
+    "status": "concluído"
   }
 ]
